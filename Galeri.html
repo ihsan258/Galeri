@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ahmad dan dianita</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #a8edea, #fed6e3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      transition: background 1s ease;
+    }
+
+    .page {
+      position: absolute;
+      width: 80%;
+      max-width: 600px;
+      padding: 40px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: scale(0.95);
+      transition: all 0.7s ease;
+      text-align: center;
+    }
+
+    .page.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    button {
+      background-color: #222;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <!-- Halaman 1 -->
+  <div id="page1" class="page active">
+    <h1>Selamat Datang</h1>
+    <p>Jelajahi keindahan alam dalam halaman berikutnya.</p>
+    <br />
+    <button onclick="goToPage()">Klik untuk Lanjut</button>
+  </div>
+
+  <!-- Halaman 2 -->
+  <div id="page2" class="page">
+    <h1>Keindahan Alam</h1>
+    <p>
+      Alam menawarkan ketenangan yang tak ternilai. Dari hamparan pegunungan hijau hingga deburan ombak yang menenangkan, setiap unsur alam membawa harmoni bagi jiwa. Berjalan di tengah hutan, mendengar nyanyian burung, dan merasakan udara segar adalah pengingat bahwa kita adalah bagian dari sesuatu yang lebih besar dan indah.
+    </p>
+  </div>
+
+  <script>
+    function goToPage() {
+      const page1 = document.getElementById("page1");
+      const page2 = document.getElementById("page2");
+
+      page1.classList.remove("active");
+      setTimeout(() => {
+        page1.style.display = "none";
+        page2.classList.add("active");
+      }, 700); // tunggu transisi selesai
+    }
+  </script>
+</body>
+</html>
